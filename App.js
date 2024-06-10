@@ -5,14 +5,16 @@ import CourseRoutes from "./Kanbas/courses/routes.js";
 import cors from "cors";
 import modules from "./Kanbas/Database/modules.js";
 import ModuleRoutes from "./Kanbas/Modules/routes.js";
+import AssignmentRoutes from "./Kanbas/Assignments/routes.js";
 
 const app = express();
 app.use(cors());
-app.use(express.json()); // do all your work after this line
+app.use(express.json());
 
 Hello(app);
 Lab5(app);
 CourseRoutes(app);
 ModuleRoutes(app);
+AssignmentRoutes(app);
 
 app.listen(process.env.PORT || 4000)
