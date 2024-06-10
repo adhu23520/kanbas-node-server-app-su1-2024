@@ -76,6 +76,13 @@ export default function WorkingWithArrays(app) {
         res.json(todos);
     });
 
+    app.post("/lab5/todos", (req, res) => {
+        const newTodo = { ...req.body,  id: new Date().getTime() };
+        todos.push(newTodo);
+        res.json(newTodo);
+      });
+    
+
     app.get("/lab5/todos", (req, res) => {
         const { completed } = req.query;
         if (completed !== undefined) {
